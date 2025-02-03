@@ -3,10 +3,6 @@
 
   - name: enable nodejs 20
     ansible.builtin.command: dnf module enable nodejs:20 -y
-  - name: Import role from common
-    ansible.builtin.import_role:
-      name: common
-      tasks_from: main
   
   - name: install nodejs
     ansible.builtin.package:
@@ -20,6 +16,11 @@
     ansible.builtin.user:
       name: expense
 
+  - name: Import role from common
+    ansible.builtin.import_role:
+      name: common
+      tasks_from: main
+  
   - name: install dependencies
     ansible.builtin.command: npm install
     args:

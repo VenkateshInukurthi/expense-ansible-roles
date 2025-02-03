@@ -12,7 +12,7 @@
   - name: Import roles from common
     ansible.builtin.import_role:
       name: common
-      tasks_from: main
+      tasks_from: app-pre-req
 
   - name: copy expense conf
     ansible.builtin.template:

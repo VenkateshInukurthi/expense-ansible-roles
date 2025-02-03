@@ -1,7 +1,3 @@
-# We have some common tasks in both fronend and backend
-# 1. Create Directory
-# 2. Download code
-# 3. Extract code
 - name: remove existing directory
   ansible.builtin.file:
     path: "{{ app_location }}"

@@ -14,6 +14,6 @@
     state: directory
 
 - name: "Download the {{ component }} code"
-  ansible.builtin.get_url:
-    url: "https://expense-builds.s3.us-east-1.amazonaws.com/expense-{{ component }}-v2.zip"
+  ansible.builtin.unarchive:
+    src: "https://expense-builds.s3.us-east-1.amazonaws.com/expense-{{ component }}-v2.zip"
     dest: "/tmp/{{ component }}.zip"

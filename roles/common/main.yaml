@@ -1,0 +1,19 @@
+# We have some common tasks in both fronend and backend
+# 1. Create Directory
+# 2. Download code
+# 3. Extract code
+- name: remove existing directory
+  ansible.builtin.file:
+    path: "{{ app_location }}"
+    state: absent
+  ignore_errors: true
+
+- name: Create app Directory
+  ansible.builtin.file:
+    path: "{{ app_location }}"
+    state: directory
+
+- name: "Download the {{ component }} code"
+  ansible.builtin.get_url:
+    url: "https://expense-builds.s3.us-east-1.amazonaws.com/expense-{{ component }}-v2.zip"
+    dest: "/tmp/{{ component }}.zip"

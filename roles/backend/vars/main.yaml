@@ -1,4 +1,3 @@
-mysql_root_password: ExpenseApp@1
 db_host: mysql.laven.cloud
 app_location: /app
 component: backend
